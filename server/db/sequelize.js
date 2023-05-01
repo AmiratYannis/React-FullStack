@@ -2,8 +2,10 @@
 const { Sequelize, DataTypes } = require('sequelize')
 const PostModel = require('../models/posts')
 const CommentModel = require('../models/comment')
+const UserModel=require('../models/users')
 const posts=require('../db/mock-posts')
 const comments=require('../db/mock-comments')
+const users=require('../db/mock-users')
 
 
 
@@ -16,9 +18,12 @@ const sequelize = new Sequelize('tutorialDB', 'root', '', {
   },
   logging: false
 })
+
+
   
 const Post= PostModel(sequelize,DataTypes)
 const Comment= CommentModel(sequelize,DataTypes)
+const User=UserModel(sequelize,DataTypes)
 
   
 const initDb = () => {
@@ -27,7 +32,8 @@ const initDb = () => {
             Post.create({
                 title:post.title,
                 postText:post.postText,
-                username:post.username
+                username:post.username,
+                userId: post.userId
             })
         })
 
@@ -37,11 +43,18 @@ const initDb = () => {
           })
         })
 
+        users.map(user=>{
+          User.create({
+            username:user.username,
+            password:user.password
+          })
+        })
+
         console.log('The database has been initialized !')
     
     })
 }
   
 module.exports = { 
-    initDb,Post,Comment
+    initDb,Post,Comment,User
 }

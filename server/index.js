@@ -14,9 +14,11 @@ app.use(cors())
 
 const postRouter= require('./routes/posts')
 const commentRouter= require('./routes/comments')
+const userRouter=require('./routes/users')
 
 app.use("/posts",postRouter)
 app.use("/comments",commentRouter)
+app.use("/auth",userRouter)
 
 sequelize.initDb()
 app.listen(port,()=>console.log(`My server running at : http://localhost:${port}`))

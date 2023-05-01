@@ -3,19 +3,22 @@ const posts=[
         id:1,
         title:"Random TItle",
         postText:"akdjdaazio",
-        username:"Yannis Amirat"
+        username:"Yannis Amirat",
+        userId:1
     },
     {
         id:2,
         title:"Example2",
         postText:"skklsflkoseo",
-        username:"Nael"
+        username:"Nael",
+        userId:2
     },
     {
         id:3,
         title:"Thsis is an awesome text",
         postText:"fnlkskfjskllkqezjqoeoz",
-        username:"Yacine"
+        username:"Yacine",
+        userId:3
     }
 ];
 

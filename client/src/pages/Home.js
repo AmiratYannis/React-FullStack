@@ -25,8 +25,10 @@ const Home = () => {
     }
 
     return (
-      <div className='Home'>
+        <>
         <Navigation/>
+      <div className='Home'>
+        
         {listOfPosts.map((value, key)=>{
             return (
                 <div className='post' onClick={()=>changePost(value.id)}>
@@ -34,10 +36,12 @@ const Home = () => {
                     <div className='postText'>{value.postText}</div>
                     <div className='username'>{value.username}</div>
                 </div>
+                
             )
       })}
             
       </div>
+      </>
     );
 };
 

@@ -4,6 +4,10 @@ module.exports = (Sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      postId:{
+        type:DataTypes.INTEGER,
+        allowNull:true,
+      }
     });
   
     return Comments;

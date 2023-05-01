@@ -13,6 +13,10 @@ module.exports = (Sequelize,DataTypes) =>{
         username: {
             type: DataTypes.STRING,
             allowNull:false,
+        },
+        userId:{
+            type: DataTypes.INTEGER,
+            allowNull:true,
         }
     });
 
@@ -20,7 +24,7 @@ module.exports = (Sequelize,DataTypes) =>{
         Posts.hasMany(models.Comments, {
           onDelete: "cascade",
         });
-    };
+      };
 
     return Posts;
 }
