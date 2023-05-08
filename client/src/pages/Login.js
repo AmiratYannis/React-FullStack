@@ -16,12 +16,14 @@ const Login = () => {
             password:password
         }
 
-        axios.post("http://localhost:3001/auth/login",data).then((res)=>{
-            if(res.data.error){
-                alert(res.data.error);
+        axios.post("http://localhost:3001/auth/login",data).then((response)=>{
+            console.log(response)
+            if(response.data.error){
+                alert(response.data.error);
             }else{
-                sessionStorage.setItem("accessToken",res.data)
-                //navigate("/")
+                console.log(response.data)
+                sessionStorage.setItem("accessToken",response.data)
+                navigate("/")
             }
             
         });
